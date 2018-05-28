@@ -26,6 +26,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CoreWeb0522.Core\CoreWeb0522.Core.csproj" />
     <ProjectReference Include="..\CoreWeb0522.Web.Core\CoreWeb0522.Web.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +58,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Models\Persons\" />
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
   </ItemGroup>
 </Project>

@@ -14,9 +14,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CoreWeb0522.Core\CoreWeb0522.Core.csproj" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+    <ProjectReference Include="..\CoreWeb0522.Core\CoreWeb0522.Core.csproj" />
   </ItemGroup>
 </Project>

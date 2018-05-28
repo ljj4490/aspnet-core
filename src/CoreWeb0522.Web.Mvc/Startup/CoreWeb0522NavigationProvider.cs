@@ -44,13 +44,21 @@ namespace CoreWeb0522.Web.Startup
                         icon: "local_offer",
                         requiredPermissionName: PermissionNames.Pages_Roles
                     )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.Roles,
+                        L("Roles"),
+                        url: "Roles",
+                        icon: "local_offer",
+                        requiredPermissionName: PermissionNames.Pages_Roles
+                    )
                 )
                 .AddItem(
                     new MenuItemDefinition(
-                        PageNames.About,
-                        L("About"),
-                        url: "About",
-                        icon: "info"
+                        PageNames.Persons,
+                        L("Persons"), //new FixedLocalizableString("联系人"), 
+                        url: "Persons",
+                        icon: "local_offer"
                     )
                 ).AddItem( // Menu items below is just for demonstration!
                     new MenuItemDefinition(
