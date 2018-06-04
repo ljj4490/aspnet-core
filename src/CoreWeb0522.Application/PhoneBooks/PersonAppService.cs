@@ -22,16 +22,27 @@ namespace CoreWeb0522.PhoneBooks
         /// </summary>
         private readonly IRepository<Person> _personRepository;
 
+        public PersonAppService(IRepository<PhoneBook.Persons.Person> personRepository)
+        {
+            _personRepository = personRepository;
+        }
+
+
 
         public async Task<PagedResultDto<PersonListDto>> GetPagedPersonAsync(GetPersonInput input)
         {
-            var query = _personRepository.GetAll();
-
+            //var query = _personRepository.GetAll();
+            //var query = _personRepository.GetAllIncluding(a => a.PhoneNumbers);
+            var query = _personRepository.GetAllIncluding(a => a.PhoneNumbers);
             var personCount = await query.CountAsync();
             var persons = await query.OrderBy(input.Sorting).PageBy(input).ToListAsync();
 
+            //abp封装方法
+            var dtos = persons.MapTo<List<PersonListDto>>();
+            return new PagedResultDto<PersonListDto>(personCount, dtos);
 
-            //老方法
+
+            //老方法-------封装方法
             //--------------begin
             //var listDto = new List<PersonListDto>();
             //foreach (var person in persons)
@@ -41,12 +52,8 @@ namespace CoreWeb0522.PhoneBooks
             //}
             //----------------end
 
-            //abp封装方法
-            var dtos = persons.MapTo<List<PersonListDto>>();
-            return new PagedResultDto<PersonListDto>(personCount, dtos);
+             
 
-
-            throw new NotImplementedException();
         }
 
         public async Task DeletePersonAsync(EntityDto input)

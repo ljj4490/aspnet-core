@@ -17,5 +17,8 @@
 
 
         public const int MaxAddressLength = 200;
+
+
+        public const string Persons = "联系人";
     }
 }

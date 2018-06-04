@@ -30,6 +30,7 @@
     <ProjectReference Include="..\CoreWeb0522.Web.Core\CoreWeb0522.Web.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Abp.Web.SignalR" Version="3.6.2" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4">
       <PrivateAssets>All</PrivateAssets>

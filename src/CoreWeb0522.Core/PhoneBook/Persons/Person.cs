@@ -22,7 +22,7 @@ namespace CoreWeb0522.PhoneBook.Persons
         /// 邮箱
         /// </summary>
         [EmailAddress]
-        [MaxLength(CoreWeb0522Consts.MaxEmailLength)]
+        [MaxLength(CoreWeb0522Consts.MaxEmailAddressLength)]
         public string EmailAddress { get; set; }
 
         /// <summary>

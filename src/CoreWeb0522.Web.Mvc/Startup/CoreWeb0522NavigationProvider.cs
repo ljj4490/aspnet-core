@@ -47,18 +47,24 @@ namespace CoreWeb0522.Web.Startup
                 ).AddItem(
                     new MenuItemDefinition(
                         PageNames.Roles,
-                        L("Roles"),
-                        url: "Roles",
+                        L("Application"),
+                        url: "Application",
                         icon: "local_offer",
                         requiredPermissionName: PermissionNames.Pages_Roles
                     )
-                )
-                .AddItem(
+                ).AddItem(
                     new MenuItemDefinition(
                         PageNames.Persons,
                         L("Persons"), //new FixedLocalizableString("联系人"), 
-                        url: "Persons",
+                        url: "Persons?skipCount=0&maxResultCount=10",
                         icon: "local_offer"
+                    )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.About,
+                        L("About"),
+                        url: "About",
+                        icon: "info"
                     )
                 ).AddItem( // Menu items below is just for demonstration!
                     new MenuItemDefinition(

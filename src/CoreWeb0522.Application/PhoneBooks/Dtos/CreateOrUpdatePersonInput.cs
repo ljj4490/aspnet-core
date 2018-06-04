@@ -2,6 +2,9 @@
 {
     public class CreateOrUpdatePersonInput
     {
-        public  PersonEditDto PersonEditDto { get; set; }
+        /// <summary>
+        /// Person编辑状态的DTO
+        /// </summary>
+        public PersonEditDto PersonEditDto { get; set; }
     }
 }

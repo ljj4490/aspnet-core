@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using CoreWeb0522.PhoneBooks.Dtos;
 
-namespace CoreWeb0522.PhoneBooks
+namespace CoreWeb0522.PhoneBooks 
 {
     public interface IPersonAppService : IApplicationService
     {
@@ -16,7 +16,7 @@ namespace CoreWeb0522.PhoneBooks
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        Task<PagedResultDto<PersonListDto>> GetPagedPersonAsync(GetPersonInput input);
+        Task<PagedResultDto<PersonListDto>> GetPagedPersonAsync(GetPersonInput input);  
 
 
         /// <summary>

@@ -1,18 +1,21 @@
-﻿@using Abp.Authorization.Users
-@using CoreWeb0522
+﻿
 @using CoreWeb0522.PhoneBooks.Dtos
 @using CoreWeb0522.Web.Startup
-@model Abp.Application.Services.Dto.PagedResultDto<PersonListDto>
+@*@model CoreWeb0522.Web.Models.Users.UserListViewModel
+@{
+    ViewBag.CurrentPageName = PageNames.Application; // The menu item will be active for this page.
+}*@
+@model Abp.Application.Services.Dto.PagedResultDto<CoreWeb0522.PhoneBooks.Dtos.PersonListDto>
 @{
     ViewBag.CurrentPageName = PageNames.Persons; // The menu item will be active for this page.
 }
- 
 @section scripts
     {
     <environment names="Development">
         <script src="~/view-resources/Views/Persons/Index.js" asp-append-version="true"></script>
     </environment>
 }
+
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -73,66 +76,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="PersonCreateModal" tabindex="-1" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    <span>@L("CreatePerson")</span>
-                </h4>
-            </div>
-            <div class="modal-body">
-                <form name="personCreateForm" role="form" novalidate class="form-validation">
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane animated fadeIn active" id="create-user-details">
-                            <div class="row clearfix" style="margin-top:10px;">
-                                <div class="col-sm-12">
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input class="form-control" type="text" name="UserName" required maxlength="@CoreWeb0522Consts.MaxNameLength" minlength="2">
-                                            <label class="form-label">@L("Name")</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-
-                            <div class="row clearfix" style="margin-top:10px;">
-                                <div class="col-sm-12">
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input class="form-control" type="text" name="Address" required maxlength="@CoreWeb0522Consts.MaxAddressLength" minlength="2">
-                                            <label class="form-label">@L("Address")</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="row clearfix" style="margin-top:10px;">
-                                <div class="col-sm-12">
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input class="form-control" type="text" name="Email" maxlength="@CoreWeb0522Consts.MaxEmailAddressLength">
-                                            <label class="form-label">@L("EmailAddress")</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
-                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="modal fade" id="UserEditModal" tabindex="-1" role="dialog" aria-labelledby="UserEditModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

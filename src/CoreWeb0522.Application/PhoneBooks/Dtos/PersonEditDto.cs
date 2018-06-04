@@ -8,7 +8,7 @@ namespace CoreWeb0522.PhoneBooks.Dtos
 {
 
 
-    [AutoMapTo(typeof(Person))]
+    [AutoMapTo(typeof(PhoneBook.Persons.Person))]
     public class PersonEditDto 
     {
         public  int? Id { get; set; }
